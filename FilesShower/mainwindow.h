@@ -2,21 +2,27 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-namespace Ui {
-class MainWindow;
-}
-
+class QListWidget;
+class QListWidgetItem;
+class QPushButton;
+#include <QDir>
+class QDir;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    //~MainWindow();
 
+private slots:
+    void openDir(QListWidgetItem *item);
+    void drives();
 private:
-    Ui::MainWindow *ui;
+    QListWidget *list;
+    QDir dir;
+    QPushButton *button;
+   //Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
